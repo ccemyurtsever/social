@@ -1,6 +1,8 @@
 import pyautogui
 
 width, height = pyautogui.size()
+
+
 try:
   print(f"Ana Ekran Çözünürlüğü: {width}x{height}")
   xdef,ydef = width / 1.23  , height / 1.23
