@@ -1,4 +1,4 @@
-import sys,sizing,random,time,database,messagebox
+import sys,sizing,random,time,database,messagebox,style
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import QApplication, QLabel, QPushButton,  QToolBar , QStatusBar, QMenuBar
 from PySide6.QtCore import Slot, Qt
@@ -18,20 +18,36 @@ class mainPage(QtWidgets.QMainWindow):
         self.setWindowOpacity(0.8)
 
 
-        toolbarStyle = """
-                color: white;
-                background-color: black;
-            """
+
+
         
         toolbar = QToolBar("My main toolbar")
-        toolbar.setStyleSheet(toolbarStyle)
+        toolbar.setStyleSheet(style.toolbarStyle)
         self.addToolBar(toolbar)
-        button_action = QAction("Your button", self)
+
+        """
+        button_action = QAction("Account", self)
         button_action.setStatusTip("This is your button")
         button_action.triggered.connect(self.showInfo)
         button_action.setCheckable(True)
         toolbar.addAction(button_action)
-        self.setStatusBar(QStatusBar(self))  
+        Manuel add button
+        """
+        def createToolButton(name,status,event):
+            toolbarButton = QAction(name,self)
+            toolbarButton.setStatusTip(status)
+            toolbarButton.triggered.connect(event)
+            toolbarButton.setCheckable(True)
+            toolbar.addAction(toolbarButton)
+        
+        createToolButton(" File ","This is your button",self.showInfo)
+        createToolButton("Account","This is your button",self.showInfo)
+        createToolButton(" File ","This is your button",self.showInfo)
+
+
+
+
+
 
 
 
@@ -68,5 +84,4 @@ if __name__ == "__main__":
     widget.resize(sizing.xdef, sizing.ydef)
     widget.move(sizing.xdefmov,sizing.ydefmove)
     widget.show()
-    
     sys.exit(app.exec())
