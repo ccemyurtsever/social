@@ -20,8 +20,4 @@ toolbarStyle = """
                 background-color: #6600cc; /* Tıklı ve fare üzerindeyken arka plan rengi - mor */
             }
         """
-infoButtonStyle = """
-                color: white;
-                selection-color: white;
-                selection-background-color: white;
-            """
+

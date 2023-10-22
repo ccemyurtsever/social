@@ -45,6 +45,8 @@ class mainPage(QtWidgets.QMainWindow):
         createToolButton(" File ","This is your button",self.showInfo)
         createToolButton("Account","This is your button",self.showInfo)
         createToolButton("Math","This is your button",self.showInfo)
+        createToolButton("İnfo","This is your button",self.myWeb)
+
 
 
         def createToolDropdownMenu(menu_title, *items):
@@ -55,22 +57,12 @@ class mainPage(QtWidgets.QMainWindow):
                     dropdown_button.setMenu(dropdown_menu)
                     toolbar.addAction(dropdown_button)
 
-        createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "Twitter")
+        createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "X(Twitter)","Reddit",)
 
 
         def createButton():
             pass
              
-
-            
-
-
-        self.info = QPushButton(text="  ", parent=self)
-        self.info.setFixedSize(70, 32)
-        self.info.setIcon(QIcon("static/bug.png"))
-        self.info.move(sizing.infox,sizing.infoy)
-        self.info.setStyleSheet(style.infoButtonStyle)
-        self.info.clicked.connect(self.showInfo)
 
     #     link_action = QAction("Website Shortkeys", self)
     #     link_action.setStatusTip("Visit the My website")
@@ -97,7 +89,9 @@ class mainPage(QtWidgets.QMainWindow):
 
     @QtCore.Slot()
     def myWeb(self):
-        QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
+        messagebox.showinfo('İNFO', 'For detailed information about usage: https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev\nAfter you turn it offYou will be redirected within 5 seconds.')
+        time.sleep(5)
+        QDesktopServices.openUrl(QUrl("https://www.cemyurtsever.dev"))
 
     @QtCore.Slot()
     def showInfo(self):
