@@ -1,9 +1,9 @@
-import sys,sizing,random,time,database,messagebox,style
+import sys,sizing,random,time,database,messagebox,style,PysideMessagebox
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
                                QStatusBar, QMenuBar,
-                               QMenu)
+                               QMenu,QMessageBox)
 from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
@@ -21,15 +21,10 @@ class mainPage(QtWidgets.QMainWindow):
         self.setWindowOpacity(0.8)
 
 
-
-
-        
         toolbar = QToolBar("My main toolbar")
         toolbar.setStyleSheet(style.toolbarStyle)
         toolbar.setMovable(False)
         self.addToolBar(toolbar)
-
-
 
         """
         button_action = QAction("Account", self)
@@ -37,7 +32,7 @@ class mainPage(QtWidgets.QMainWindow):
         button_action.triggered.connect(self.showInfo)
         button_action.setCheckable(True)
         toolbar.addAction(button_action)
-        Manuel add button
+        Manuel add tool button
 
         """
         def createToolButton(name,status,event):
@@ -47,10 +42,9 @@ class mainPage(QtWidgets.QMainWindow):
             toolbarButton.setCheckable(True)
             toolbar.addAction(toolbarButton)
 
-        
         createToolButton(" File ","This is your button",self.showInfo)
         createToolButton("Account","This is your button",self.showInfo)
-        createToolButton(" File ","This is your button",self.showInfo)
+        createToolButton("Math","This is your button",self.showInfo)
 
 
         def createToolDropdownMenu(menu_title, *items):
@@ -63,21 +57,12 @@ class mainPage(QtWidgets.QMainWindow):
 
         createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "Twitter")
 
+
+        def createButton():
+            pass
+             
+
             
-
-
-    #     link_action = QAction("Website Shortkeys", self)
-    #     link_action.setStatusTip("Visit the My website")
-    #     link_action.triggered.connect(self.myWeb)
-
-    #     toolbar.addAction(link_action)
-
-    # def myWeb(self):
-    #     QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
-
-
-
-
 
 
         self.info = QPushButton(text="  ", parent=self)
@@ -86,6 +71,20 @@ class mainPage(QtWidgets.QMainWindow):
         self.info.move(sizing.infox,sizing.infoy)
         self.info.setStyleSheet(style.infoButtonStyle)
         self.info.clicked.connect(self.showInfo)
+
+    #     link_action = QAction("Website Shortkeys", self)
+    #     link_action.setStatusTip("Visit the My website")
+    #     link_action.triggered.connect(self.myWeb)
+
+    #     toolbar.addAction(link_action)
+
+        # def myWeb(self):
+        #     QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
+
+
+
+
+
 
 
 
@@ -96,10 +95,14 @@ class mainPage(QtWidgets.QMainWindow):
         self.layout = QtWidgets.QVBoxLayout(self)
         # self.layout.addWidget(self.text)
 
+    @QtCore.Slot()
+    def myWeb(self):
+        QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
 
     @QtCore.Slot()
     def showInfo(self):
         messagebox.showinfo('İNFO', 'For detailed information about usage: https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev')
+        
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
