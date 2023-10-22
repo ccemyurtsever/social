@@ -10,9 +10,9 @@
   <h3 align="center">Swedish Pocket Knife</h3>
 
   <p align="center">
-    <a href="[https://github.com/othneildrew/Best-README-Template/issues](https://cemyurtsever.dev/contactme)">Report Bug</a>
+    <a href="(https://cemyurtsever.dev/contactme)">Report Bug</a>
     ·
-    <a href="[https://github.com/othneildrew/Best-README-Template/issues](https://cemyurtsever.dev/contactme)">Request Feature</a>
+    <a href="(https://cemyurtsever.dev/contactme)">Request Feature</a>
   </p>
 </div>
 
