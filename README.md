@@ -70,12 +70,11 @@ Use the `BLANK_README.md` to get started.
 
 * Python
 * https://pypi.org/project/PySide6/
-* [![css]]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* CSS
+* https://www.w3.org/Style/CSS/Overview.en.html
+* MYSQL
+* https://pypi.org/project/MySQL-python/
+* SQL
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
