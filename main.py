@@ -1,8 +1,11 @@
 import sys,sizing,random,time,database,messagebox,style
 from PySide6 import QtCore, QtWidgets, QtGui
-from PySide6.QtWidgets import QApplication, QLabel, QPushButton,  QToolBar , QStatusBar, QMenuBar
-from PySide6.QtCore import Slot, Qt
-from PySide6.QtGui import QPalette, QColor,QAction
+from PySide6.QtWidgets import (QApplication, QLabel,
+                               QPushButton,  QToolBar,
+                               QStatusBar, QMenuBar,
+                               QMenu)
+from PySide6.QtCore import Slot, Qt ,QUrl
+from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
 
 
@@ -23,7 +26,10 @@ class mainPage(QtWidgets.QMainWindow):
         
         toolbar = QToolBar("My main toolbar")
         toolbar.setStyleSheet(style.toolbarStyle)
+        toolbar.setMovable(False)
         self.addToolBar(toolbar)
+
+
 
         """
         button_action = QAction("Account", self)
@@ -32,6 +38,7 @@ class mainPage(QtWidgets.QMainWindow):
         button_action.setCheckable(True)
         toolbar.addAction(button_action)
         Manuel add button
+
         """
         def createToolButton(name,status,event):
             toolbarButton = QAction(name,self)
@@ -39,28 +46,45 @@ class mainPage(QtWidgets.QMainWindow):
             toolbarButton.triggered.connect(event)
             toolbarButton.setCheckable(True)
             toolbar.addAction(toolbarButton)
+
         
         createToolButton(" File ","This is your button",self.showInfo)
         createToolButton("Account","This is your button",self.showInfo)
         createToolButton(" File ","This is your button",self.showInfo)
 
 
+        def createToolDropdownMenu(menu_title, *items):
+                    dropdown_menu = QMenu(self)
+                    for item in items:
+                        dropdown_menu.addAction(item)
+                    dropdown_button = QAction(menu_title, self)
+                    dropdown_button.setMenu(dropdown_menu)
+                    toolbar.addAction(dropdown_button)
+
+        createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "Twitter")
+
+            
+
+
+    #     link_action = QAction("Website Shortkeys", self)
+    #     link_action.setStatusTip("Visit the My website")
+    #     link_action.triggered.connect(self.myWeb)
+
+    #     toolbar.addAction(link_action)
+
+    # def myWeb(self):
+    #     QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
 
 
 
 
 
 
-        infoButtonStyle = """
-                color: white;
-                background-color: red;
-                selection-color: white;
-                selection-background-color: white;
-            """
-        self.info = QPushButton(text=" ? ", parent=self)
+        self.info = QPushButton(text="  ", parent=self)
         self.info.setFixedSize(70, 32)
+        self.info.setIcon(QIcon("static/bug.png"))
         self.info.move(sizing.infox,sizing.infoy)
-        self.info.setStyleSheet(infoButtonStyle)
+        self.info.setStyleSheet(style.infoButtonStyle)
         self.info.clicked.connect(self.showInfo)
 
 
@@ -75,7 +99,6 @@ class mainPage(QtWidgets.QMainWindow):
 
     @QtCore.Slot()
     def showInfo(self):
-        time.sleep(0.1)
         messagebox.showinfo('İNFO', 'For detailed information about usage: https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev')
 
 if __name__ == "__main__":
