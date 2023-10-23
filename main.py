@@ -35,6 +35,7 @@ class mainPage(QtWidgets.QMainWindow):
         Manuel add tool button
 
         """
+        
         def createToolButton(name,status,event):
             toolbarButton = QAction(name,self)
             toolbarButton.setStatusTip(status)
