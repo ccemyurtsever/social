@@ -26,6 +26,7 @@ class mainPage(QtWidgets.QMainWindow):
         toolbar.setMovable(False)
         self.addToolBar(toolbar)
 
+
         """
         button_action = QAction("Account", self)
         button_action.setStatusTip("This is your button")
@@ -35,6 +36,7 @@ class mainPage(QtWidgets.QMainWindow):
         Manuel add tool button
 
         """
+        
         
         def createToolButton(name,status,event):
             toolbarButton = QAction(name,self)
