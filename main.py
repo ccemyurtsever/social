@@ -9,6 +9,7 @@ from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
 
 
+
 class mainPage(QtWidgets.QMainWindow):
     def __init__(self):
         super(mainPage,self).__init__()
@@ -60,7 +61,7 @@ class mainPage(QtWidgets.QMainWindow):
                     dropdown_button.setMenu(dropdown_menu)
                     toolbar.addAction(dropdown_button)
 
-        createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "X(Twitter)","Reddit",)
+        createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "X (Twitter)","Reddit",)
 
 
         def createButton():
