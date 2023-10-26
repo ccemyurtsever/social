@@ -8,7 +8,6 @@ from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
 
-# İNTERNETİM YOK 
 
 class mainPage(QtWidgets.QMainWindow):
     def __init__(self):
