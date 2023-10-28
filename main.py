@@ -75,22 +75,39 @@ class mainPage(QtWidgets.QMainWindow):
         # createEntry(self,1,400,400,60,60,"deneme")
 
         
+        # def createEntry(self,name,movex,movey,resizex,resizey,text):
+        #     self.name = QLineEdit(self)
+        #     self.name.move(movex,movey)
+        #     self.name.resize(resizex,resizey)
+        #     self.name.setText(text)
+        #     print(name)
+
+                        
+        # createEntry(self,"nameess",400,400,60,60,"deneme")
+
+        # def yazdir(self):
+        #     if hasattr(createEntry, 'btn'):
+        #         print("Butonun metni:", self)
+        #     else:
+        #         print("Buton bulunamadı!")
+
         def createEntry(self,name,movex,movey,resizex,resizey,text):
             self.name = QLineEdit(self)
             self.name.move(movex,movey)
             self.name.resize(resizex,resizey)
             self.name.setText(text)
             print(name)
+            print(self.name.text())
 
                         
         createEntry(self,"nameess",400,400,60,60,"deneme")
 
+        @QtCore.Slot()
         def yazdir(self):
-            if hasattr(createEntry, 'btn'):
-                print("Butonun metni:", self)
+            if hasattr(createEntry, 'nameess'):
+                print("Entry metni:", self)
             else:
-                print("Buton bulunamadı!")
-
+                print("Entry bulunamadı!")
 
 
 
