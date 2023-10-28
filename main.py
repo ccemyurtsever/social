@@ -62,30 +62,37 @@ class mainPage(QtWidgets.QMainWindow):
 
         createToolButton("İnfo","This is your button",self.myWeb)
 
-        # def createButton(self, text, event):
-        #     button = QPushButton(text, self)
-        #     button.clicked.connect(event)
-        #     button.resize(200, 32)
-        #     button.move(80, 60)
-        #     return button
-        
-        
-        def createEntry(self,number,movex,movey,resizex,resizey,text):
-            while number != 0:
-                entryName = f"Entry{number}"
-                entryName = QLineEdit(self)
-                entryName.move(movex,movey)
-                entryName.resize(resizex,resizey)
-                entryName.setText(text)
-                number -= 1
+                
+        # def createEntry(self,number,movex,movey,resizex,resizey,text):
+        #     while number != 0:
+        #         entryName = f"Entry{number}"
+        #         entryName = QLineEdit(self)
+        #         entryName.move(movex,movey)
+        #         entryName.resize(resizex,resizey)
+        #         entryName.setText(text)
+        #         number -= 1
             
-        createEntry(self,1,400,400,60,60,"deneme")
+        # createEntry(self,1,400,400,60,60,"deneme")
 
-        @QtCore.Slot()
-        def yazdır(self):
-            print(self.Entry1.text())
-   
-            
+        
+        def createEntry(self,name,movex,movey,resizex,resizey,text):
+            self.name = QLineEdit(self)
+            self.name.move(movex,movey)
+            self.name.resize(resizex,resizey)
+            self.name.setText(text)
+            print(name)
+
+                        
+        createEntry(self,"nameess",400,400,60,60,"deneme")
+
+        def yazdir(self):
+            if hasattr(createEntry, 'btn'):
+                print("Butonun metni:", self)
+            else:
+                print("Buton bulunamadı!")
+
+
+
 
 
         def createButton(name,text,event,resizex,resizey,movex,movey):
@@ -95,30 +102,10 @@ class mainPage(QtWidgets.QMainWindow):
             self.name.resize(resizex,resizey)
             return name
         
-        createButton("namee","text",yazdır,50,50,300,300)
-
-
-            
-    
-    
-     
+        createButton("namee","text",yazdir,50,50,300,300)
 
 
 
-    #     link_action = QAction("Website Shortkeys", self)
-    #     link_action.setStatusTip("Visit the My website")
-    #     link_action.triggered.connect(self.myWeb)
-
-    #     toolbar.addAction(link_action)
-
-        # def myWeb(self):
-        #     QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
-
-        # self.text = QtWidgets.QLabel("Hello World",
-                                    #  alignment=QtCore.Qt.AlignCenter)
-
-        # self.layout = QtWidgets.QVBoxLayout(self) --
-        # self.layout.addWidget(self.text)
 
     @QtCore.Slot()
     def myWeb(self):
