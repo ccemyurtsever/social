@@ -3,7 +3,8 @@ from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
                                QStatusBar, QMenuBar,
-                               QMenu,QMessageBox,QLineEdit)
+                               QMenu,QMessageBox,QLineEdit,
+                               QVBoxLayout)
 from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
@@ -26,7 +27,7 @@ class mainPage(QtWidgets.QMainWindow):
         toolbar.setMovable(False)
         self.addToolBar(toolbar)
 
-        messagebox.showinfo('İNFO', 'For your information, only the YouTube part is currently working. https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev')
+        # messagebox.showinfo('İNFO', 'For your information, only the YouTube part is currently working. https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev')
         """
         button_action = QAction("Account", self)
         button_action.setStatusTip("This is your button")
@@ -49,9 +50,6 @@ class mainPage(QtWidgets.QMainWindow):
         createToolButton("Account","This is your button",self.showInfo)
         createToolButton("Math","This is your button",self.showInfo)
 
-
-
-
         def createToolDropdownMenu(menu_title, *items):
                     dropdown_menu = QMenu(self)
                     for item in items:
@@ -70,16 +68,37 @@ class mainPage(QtWidgets.QMainWindow):
         #     button.resize(200, 32)
         #     button.move(80, 60)
         #     return button
+        
+        
+        def createEntry(self,number,movex,movey,resizex,resizey,text):
+            while number != 0:
+                entryName = f"Entry{number}"
+                entryName = QLineEdit(self)
+                entryName.move(movex,movey)
+                entryName.resize(resizex,resizey)
+                entryName.setText(text)
+                number -= 1
+            
+        createEntry(self,1,400,400,60,60,"deneme")
 
-        def createEntry(name,movex,movey,resizex,resizey):
-            self.name = QLineEdit(self)
+        @QtCore.Slot()
+        def yazdır(self):
+            print(self.Entry1.text())
+   
+            
+
+
+        def createButton(name,text,event,resizex,resizey,movex,movey):
+            self.name = QPushButton(text,self)
+            self.name.clicked.connect(event)
             self.name.move(movex,movey)
             self.name.resize(resizex,resizey)
-             
-        createEntry("x",200,200,200,40)
+            return name
+        
+        createButton("namee","text",yazdır,50,50,300,300)
 
 
-
+            
     
     
      
