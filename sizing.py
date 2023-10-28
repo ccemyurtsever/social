@@ -3,12 +3,12 @@ import time
 
 width, height = pyautogui.size()
 
-
 try:
     print(f"Ana Ekran Çözünürlüğü: {width}x{height}")
     xdef , ydef = width / 1.23  , height / 1.23
     xdefmov , ydefmove = width / 10  , height / 15
-    infox , infoy = width / 1.29 , height / 22
+
+
 except ZeroDivisionError:
   print("Çözünürlük bulunamadı.")
   breakpoint()

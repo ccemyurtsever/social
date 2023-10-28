@@ -3,7 +3,7 @@ from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
                                QStatusBar, QMenuBar,
-                               QMenu,QMessageBox)
+                               QMenu,QMessageBox,QLineEdit)
 from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
@@ -48,7 +48,7 @@ class mainPage(QtWidgets.QMainWindow):
         createToolButton(" File ","This is your button",self.showInfo)
         createToolButton("Account","This is your button",self.showInfo)
         createToolButton("Math","This is your button",self.showInfo)
-        createToolButton("İnfo","This is your button",self.myWeb)
+
 
 
 
@@ -62,10 +62,31 @@ class mainPage(QtWidgets.QMainWindow):
 
         createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "X (Twitter)","Reddit",)
 
+        createToolButton("İnfo","This is your button",self.myWeb)
 
         def createButton():
             pass
-             
+        
+
+        def createLine(nameLabel,line):
+            self.nameLabel = QLabel(self)
+            self.nameLabel.setText('Name:')
+            self.line = QLineEdit(self)
+            self.line.setPlaceholderText("Enter your text")
+            self.line.move(80, 20)
+            self.line.resize(200, 32)
+            self.nameLabel.move(20, 20)
+
+
+
+
+
+
+
+
+
+
+
 
     #     link_action = QAction("Website Shortkeys", self)
     #     link_action.setStatusTip("Visit the My website")
@@ -76,18 +97,10 @@ class mainPage(QtWidgets.QMainWindow):
         # def myWeb(self):
         #     QDesktopServices.openUrl(QUrl("cemyurtsever.dev"))
 
-
-
-
-
-
-
-
-
         # self.text = QtWidgets.QLabel("Hello World",
                                     #  alignment=QtCore.Qt.AlignCenter)
 
-        self.layout = QtWidgets.QVBoxLayout(self)
+        # self.layout = QtWidgets.QVBoxLayout(self) --
         # self.layout.addWidget(self.text)
 
     @QtCore.Slot()
