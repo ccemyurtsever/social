@@ -4,17 +4,17 @@ import time
 width, height = pyautogui.size()
 
 try:
-    print(f"Ana Ekran Çözünürlüğü: {width}x{height}")
+    print(f"Main Screen Resolution: {width}x{height}")
     xdef , ydef = width / 1.23  , height / 1.23
     xdefmov , ydefmove = width / 10  , height / 15
 
 
 except ZeroDivisionError:
-  print("Çözünürlük bulunamadı.")
+  print("No resolution found.")
   breakpoint()
 except ValueError:
-  print("Bu çözünürlükte bir ekran oluşturulamadı.")
+  print("Could not create a screen with this resolution.")
   breakpoint()
 except:
-  print("Bilinmeyen sorun meydana geldi.")
+  print("An unknown problem has occurred.")
   breakpoint()
