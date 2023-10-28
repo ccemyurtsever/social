@@ -3,7 +3,7 @@ from pytube import YouTube
 def fastYoutube(link):
     YouTube(f"{link}").streams.first().download()
 
-def youtube(quality):
+def youtube(quality,link):
     if quality == "144p":
         pass
     elif quality == "240p":
@@ -24,6 +24,6 @@ def youtube(quality):
         print(f"Error\nYou selected a resolution ({quality}p) that is not available in the video.")    
 
 
-def youtubeMp3():
+def youtubeMp3(link):
     pass
 

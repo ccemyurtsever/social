@@ -26,7 +26,7 @@ class mainPage(QtWidgets.QMainWindow):
         toolbar.setMovable(False)
         self.addToolBar(toolbar)
 
-
+        messagebox.showinfo('İNFO', 'For your information, only the YouTube part is currently working. https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev')
         """
         button_action = QAction("Account", self)
         button_action.setStatusTip("This is your button")
@@ -64,27 +64,25 @@ class mainPage(QtWidgets.QMainWindow):
 
         createToolButton("İnfo","This is your button",self.myWeb)
 
-        def createButton():
-            pass
-        
+        # def createButton(self, text, event):
+        #     button = QPushButton(text, self)
+        #     button.clicked.connect(event)
+        #     button.resize(200, 32)
+        #     button.move(80, 60)
+        #     return button
 
-        def createLine(nameLabel,line):
-            self.nameLabel = QLabel(self)
-            self.nameLabel.setText('Name:')
-            self.line = QLineEdit(self)
-            self.line.setPlaceholderText("Enter your text")
-            self.line.move(80, 20)
-            self.line.resize(200, 32)
-            self.nameLabel.move(20, 20)
-
-
-
+        def createEntry(name,movex,movey,resizex,resizey):
+            self.name = QLineEdit(self)
+            self.name.move(movex,movey)
+            self.name.resize(resizex,resizey)
+             
+        createEntry("x",200,200,200,40)
 
 
 
-
-
-
+    
+    
+     
 
 
 
