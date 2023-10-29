@@ -1,9 +1,10 @@
 from pytube import YouTube
 
-
-
 def fastYoutube(link):
     YouTube(f"{link}").streams.first().download()
+
+def ytMp3Download(url):
+    YouTube(url).streams.filter(res="mp3").first().download()
 
 # def ytDownload(url,quality,fps):
 #     if quality == "1080p":
@@ -60,3 +61,5 @@ def ytDownload(url,quality,fps):
                 download
         else:
             return
+
+

@@ -126,15 +126,15 @@ class mainPage(QtWidgets.QMainWindow):
         self.setCentralWidget(label)
 
 
-        def createFrame(movex,movey,xdef,ydef):
+        def createFrame(movex,movey,xdef,ydef,bgColor):
             main_frame = QFrame(self)
             main_frame.setGeometry(movex, movey, xdef, ydef)
             main_frame.setFrameShape(QFrame.StyledPanel)  # Çerçeve şekli
             main_frame.setFrameShadow(QFrame.Sunken)  # Çerçeve gölgesi
-            main_frame.setStyleSheet("background-color: black;")  # A
+            main_frame.setStyleSheet(f"background-color: {bgColor};")
 
-        createFrame(2,130,150,sizing.ydef-250)
-        createFrame(2,760,1558,100)
+        createFrame(2,130,150,sizing.ydef-250,"grey")
+        createFrame(2,765,1558,100,"grey")
 
         
 
