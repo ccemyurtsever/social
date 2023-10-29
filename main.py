@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
                                QStatusBar, QMenuBar,
                                QMenu,QMessageBox,QLineEdit,
-                               QVBoxLayout)
+                               QVBoxLayout,QFrame)
 from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
@@ -15,6 +15,7 @@ class mainPage(QtWidgets.QMainWindow):
         super(mainPage,self).__init__()
         self.setWindowTitle("Swedish Pocketknife V1.0")
         self.setWindowIcon(QtGui.QIcon('static/icon.ico'))
+        # self.setStyleSheet("background-color:#333;")
    
         GlobalBlur(self.winId(),Dark=True,QWidget=self)
         # self.setWindowFlag(QtCore.Qt.FramelessWindowHint) # No title bar
@@ -112,6 +113,30 @@ class mainPage(QtWidgets.QMainWindow):
 
         createButton("namee", "text", yazdir, 50, 50, 300, 300)
 
+
+        def createLabel(text):
+            label = QLabel(text)  
+        label = QLabel("CY")
+        font = label.font()
+        font.setPointSize(70)
+        label.setFont(font)
+        label.setAlignment(
+            Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter
+        )
+        self.setCentralWidget(label)
+
+
+        def createFrame(movex,movey,xdef,ydef):
+            main_frame = QFrame(self)
+            main_frame.setGeometry(movex, movey, xdef, ydef)
+            main_frame.setFrameShape(QFrame.StyledPanel)  # Çerçeve şekli
+            main_frame.setFrameShadow(QFrame.Sunken)  # Çerçeve gölgesi
+            main_frame.setStyleSheet("background-color: black;")  # A
+
+        createFrame(2,130,150,sizing.ydef-250)
+        createFrame(2,760,1558,100)
+
+        
 
     @QtCore.Slot()
     def myWeb(self):
