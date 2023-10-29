@@ -1,4 +1,4 @@
-import sys,sizing,random,time,database,messagebox,style,PysideMessagebox
+import sys,sizing,random,time,database,messagebox,style,pysideMessagebox,youtube
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
@@ -93,12 +93,15 @@ class mainPage(QtWidgets.QMainWindow):
         self.entry.setPlaceholderText("Metin girin...")
 
 
-
-
         QtCore.Slot()
         def yazdir():
             text = self.entry.text()
             print(f"Girilen metin: {text}")
+            print("start")
+            youtube.ytDownload(f"{text}","720p",30)
+            print("stop")
+
+            
 
         def createButton(name, text, event, resizex, resizey, movex, movey):
             button = QPushButton(text, self)
