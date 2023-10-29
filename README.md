@@ -33,12 +33,16 @@ $ npm start
 
 ## English
 
-- [Türkçe] (#Türkçe)
+- [Türkçe](#Türkçe)
 - [About](#about)
 - [While starting](#While-starting)
-- [use](#use)
+- [Use](#use)
 - [Screenshots](#Screenshots)
 - [KatContributingk](#KatContributingk)
 - [Licence](#Licence)
 
 ## About
+
+## While starting
+
+## Use
