@@ -1,26 +1,38 @@
-from PySide6.QtWidgets import QApplication, QWidget, QLineEdit
 import sys
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QLineEdit
 
-class MyWidget(QWidget):
+class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-    def createEntry(name, movex, movey, resizex, resizey, text):
-        name = QLineEdit()
-        name.move(movex, movey)
-        name.resize(resizex, resizey)
-        name.setText(text)
-        name.setObjectName(name)  # 'name' değerini bir nesne adı olarak sakla
-    createEntry("sss",50,50,50,50,"scads")
+        self.setWindowTitle("QLineEdit ile Metin Girişi")
+        self.setGeometry(100, 100, 400, 200)
 
-    def yazdir(self):
-        if hasattr(self, 'name'):
-            print("Name değeri:", self.name.objectName())  # 'name' değerine eriş
-        else:
-            print("Buton bulunamadı!")
+        central_widget = QWidget(self)
+        self.setCentralWidget(central_widget)
+
+        layout = QVBoxLayout()
+
+        # QLineEdit öğesi oluşturun
+        self.entry = QLineEdit(self)
+        self.entry.setPlaceholderText("Metin girin...")
+
+        # QPushButton (buton) oluşturun
+        button = QPushButton("Mesajı Göster", self)
+        button.clicked.connect(self.show_message)
+
+        layout.addWidget(self.entry)
+        layout.addWidget(button)
+
+        central_widget.setLayout(layout)
+
+    def show_message(self):
+        text = self.entry.text()
+        print(f"Girilen metin: {text}")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = MyWidget()
+    window = MyWindow()
     window.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec_())

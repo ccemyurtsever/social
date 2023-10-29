@@ -27,7 +27,6 @@ class mainPage(QtWidgets.QMainWindow):
         toolbar.setMovable(False)
         self.addToolBar(toolbar)
 
-        # messagebox.showinfo('İNFO', 'For your information, only the YouTube part is currently working. https://github.com/ccemyurtsever/swedishPocketknife\nor contact with me:\ncemyurtsever.dev')
         """
         button_action = QAction("Account", self)
         button_action.setStatusTip("This is your button")
@@ -37,7 +36,6 @@ class mainPage(QtWidgets.QMainWindow):
         Manuel add tool button
 
         """
-        
         
         def createToolButton(name,status,event):
             toolbarButton = QAction(name,self)
@@ -62,34 +60,7 @@ class mainPage(QtWidgets.QMainWindow):
 
         createToolButton("İnfo","This is your button",self.myWeb)
 
-                
-        # def createEntry(self,number,movex,movey,resizex,resizey,text):
-        #     while number != 0:
-        #         entryName = f"Entry{number}"
-        #         entryName = QLineEdit(self)
-        #         entryName.move(movex,movey)
-        #         entryName.resize(resizex,resizey)
-        #         entryName.setText(text)
-        #         number -= 1
-            
-        # createEntry(self,1,400,400,60,60,"deneme")
-
-        
-        # def createEntry(self,name,movex,movey,resizex,resizey,text):
-        #     self.name = QLineEdit(self)
-        #     self.name.move(movex,movey)
-        #     self.name.resize(resizex,resizey)
-        #     self.name.setText(text)
-        #     print(name)
-
-                        
-        # createEntry(self,"nameess",400,400,60,60,"deneme")
-
-        # def yazdir(self):
-        #     if hasattr(createEntry, 'btn'):
-        #         print("Butonun metni:", self)
-        #     else:
-        #         print("Buton bulunamadı!")
+        """
 
         def createEntry(self,name,movex,movey,resizex,resizey,text):
             self.name = QLineEdit(self)
@@ -99,7 +70,6 @@ class mainPage(QtWidgets.QMainWindow):
             print(name)
             print(self.name.text())
 
-                        
         createEntry(self,"nameess",400,400,60,60,"deneme")
 
         @QtCore.Slot()
@@ -108,20 +78,36 @@ class mainPage(QtWidgets.QMainWindow):
                 print("Entry metni:", self)
             else:
                 print("Entry bulunamadı!")
+        SEE YOU LATER
+
+        """
+
+        # self.main = QLineEdit(self)
+        # self.main.move(100,100)
+        # self.main.resize(60,60)
+        # self.main.setText("")
+        # print(self.main.displayText())
+        # QLineEdit öğesi oluşturun
+
+        self.entry = QLineEdit(self)
+        self.entry.setPlaceholderText("Metin girin...")
 
 
 
 
-        def createButton(name,text,event,resizex,resizey,movex,movey):
-            self.name = QPushButton(text,self)
-            self.name.clicked.connect(event)
-            self.name.move(movex,movey)
-            self.name.resize(resizex,resizey)
-            return name
-        
-        createButton("namee","text",yazdir,50,50,300,300)
+        QtCore.Slot()
+        def yazdir():
+            text = self.entry.text()
+            print(f"Girilen metin: {text}")
 
+        def createButton(name, text, event, resizex, resizey, movex, movey):
+            button = QPushButton(text, self)
+            button.clicked.connect(event)
+            button.move(movex, movey)
+            button.resize(resizex, resizey)
+            return button
 
+        createButton("namee", "text", yazdir, 50, 50, 300, 300)
 
 
     @QtCore.Slot()
