@@ -2,9 +2,10 @@
 
 Günlük yaşamda kullandığımız basit araçların hepsini tek bir kullanıcı dostu bilgisayar programında bir araya getiren kullanıcı dostu bir program.
 
-
+## Türkçe
 ## İçindekiler
 
+- [English] (#English)
 - [Hakkında](#hakkında)
 - [Başlarken](#başlarken)
 - [Kullanım](#kullanım)
@@ -26,3 +27,18 @@ $ git clone https://github.com/kullanici/proje.git
 $ cd proje/
 $ npm install
 $ npm start
+```
+
+
+
+## English
+
+- [Türkçe] (#Türkçe)
+- [About](#about)
+- [While starting](#While-starting)
+- [use](#use)
+- [Screenshots](#Screenshots)
+- [KatContributingk](#KatContributingk)
+- [Licence](#Licence)
+
+## About
