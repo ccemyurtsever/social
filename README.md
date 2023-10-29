@@ -21,6 +21,7 @@ Bu bölümde, projenin kısa bir açıklaması ve ana özellikleri yer alır.
 
 Projeyi yerel makinenizde çalıştırmak veya geliştirmek için ne yapmanız gerektiğini açıklayan talimatları buraya ekleyin.
 
+## Kullanım
 ```bash
 # Örnek başlangıç komutları
 $ git clone https://github.com/kullanici/proje.git
@@ -28,8 +29,11 @@ $ cd proje/
 $ npm install
 $ npm start
 ```
+## Ekran Görüntüleri
 
+## KatContributingk
 
+## Lisans
 
 ## English
 
@@ -46,3 +50,9 @@ $ npm start
 ## While starting
 
 ## Use
+
+## Screenshots
+
+## KatContributingk
+
+## Licence
