@@ -5,7 +5,7 @@ Günlük yaşamda kullandığımız basit araçların hepsini tek bir kullanıc�
 ## Türkçe
 ## İçindekiler
 
-- [English] (#English)
+- [English](#English)
 - [Hakkında](#hakkında)
 - [Başlarken](#başlarken)
 - [Kullanım](#kullanım)
