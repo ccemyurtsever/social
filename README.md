@@ -1,6 +1,7 @@
-# Proje Adı
+# SwedishPocketknife
 
-Kısa proje açıklaması buraya gelebilir.
+Günlük yaşamda kullandığımız basit araçların hepsini tek bir kullanıcı dostu bilgisayar programında bir araya getiren kullanıcı dostu bir program.
+
 
 ## İçindekiler
 
