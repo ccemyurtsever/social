@@ -92,6 +92,7 @@ class mainPage(QtWidgets.QMainWindow):
 
         self.entry = QLineEdit(self)
         self.entry.setPlaceholderText("Metin girin...")
+        self.entry.move(3,100)
 
 
         QtCore.Slot()
