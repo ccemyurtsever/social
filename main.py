@@ -134,9 +134,13 @@ class mainPage(QtWidgets.QMainWindow):
         # createFrame(2,130,150,sizing.ydef-250,"grey")
         # createFrame(2,765,1558,100,"grey")
 
-    @QtCore.Slot()
     def youtubeUi(self):
-        ui_youtube.start()
+        import ui_youtube  # ui_youtube modülünü içe aktarın
+        youtube_window = mainPage()  # Bir QMainWindow veya QWidget oluşturun
+        ui = ui_youtube.Ui_Form()  # ui_youtube modülünden Ui_Form sınıfını oluşturun
+        ui.setupUi(youtube_window)  # YouTube penceresini oluşturun
+        youtube_window.show()
+        
         
 
 
