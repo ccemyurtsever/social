@@ -1,4 +1,4 @@
-import sys,sizing,random,time,database,messagebox,style,pysideMessagebox,youtube
+import sys,sizing,random,time,database,messagebox,style,pysideMessagebox,ui_youtube
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
@@ -8,6 +8,7 @@ from PySide6.QtWidgets import (QApplication, QLabel,
 from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
+
 
 
 class mainPage(QtWidgets.QMainWindow):
@@ -97,11 +98,7 @@ class mainPage(QtWidgets.QMainWindow):
 
         QtCore.Slot()
         def yazdir():
-            text = self.entry.text()
-            print(f"Girilen metin: {text}")
-            print("start")
-            youtube.ytDownload(f"{text}","720p",30)
-            print("stop")
+            pass
 
             
 
@@ -112,32 +109,36 @@ class mainPage(QtWidgets.QMainWindow):
             button.resize(resizex, resizey)
             return button
 
-        createButton("namee", "text", yazdir, 50, 50, 300, 300)
+        createButton("namee", "text", self.youtubeUi, 50, 50, 300, 300)
 
 
-        def createLabel(text):
-            label = QLabel(text)  
-        label = QLabel("CY")
-        font = label.font()
-        font.setPointSize(70)
-        label.setFont(font)
-        label.setAlignment(
-            Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter
-        )
-        self.setCentralWidget(label)
+        # def createLabel(text):
+        #     label = QLabel(text)  
+        # label = QLabel("CY")
+        # font = label.font()
+        # font.setPointSize(70)
+        # label.setFont(font)
+        # label.setAlignment(
+        #     Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter
+        # )
+        # self.setCentralWidget(label)
 
 
-        def createFrame(movex,movey,xdef,ydef,bgColor):
-            main_frame = QFrame(self)
-            main_frame.setGeometry(movex, movey, xdef, ydef)
-            main_frame.setFrameShape(QFrame.StyledPanel)  # Çerçeve şekli
-            main_frame.setFrameShadow(QFrame.Sunken)  # Çerçeve gölgesi
-            main_frame.setStyleSheet(f"background-color: {bgColor};")
+        # def createFrame(movex,movey,xdef,ydef,bgColor):
+        #     main_frame = QFrame(self)
+        #     main_frame.setGeometry(movex, movey, xdef, ydef)
+        #     main_frame.setFrameShape(QFrame.StyledPanel)  # Çerçeve şekli
+        #     main_frame.setFrameShadow(QFrame.Sunken)  # Çerçeve gölgesi
+        #     main_frame.setStyleSheet(f"background-color: {bgColor};")
 
-        createFrame(2,130,150,sizing.ydef-250,"grey")
-        createFrame(2,765,1558,100,"grey")
+        # createFrame(2,130,150,sizing.ydef-250,"grey")
+        # createFrame(2,765,1558,100,"grey")
 
+    @QtCore.Slot()
+    def youtubeUi(self):
+        ui_youtube.start()
         
+
 
     @QtCore.Slot()
     def myWeb(self):

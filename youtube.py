@@ -6,11 +6,6 @@ def fastYoutube(link):
 def ytMp3Download(url):
     YouTube(url).streams.filter(res="mp3").first().download()
 
-# def ytDownload(url,quality,fps):
-#     if quality == "1080p":
-#         if fps == 60:
-#             YouTube(url).streams.filter(res=quality).filter(fps=fps).first().download()
-
 
 def ytDownload(url,quality,fps):
     with YouTube(url).streams.filter(res=quality).filter(fps=fps).first().download() as download:
