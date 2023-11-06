@@ -23,5 +23,3 @@ def create():
         password text NOT NULL
     )""")
     dbOut()
-
-create()

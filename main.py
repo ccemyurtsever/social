@@ -1,4 +1,4 @@
-import sys,sizing,random,time,database,messagebox,style,pysideMessagebox,ui_youtube
+import sys,random,time,messagebox
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import (QApplication, QLabel,
                                QPushButton,  QToolBar,
@@ -9,23 +9,28 @@ from PySide6.QtCore import Slot, Qt ,QUrl
 from PySide6.QtGui import QPalette, QColor, QAction, QIcon,QDesktopServices
 from BlurWindow.blurWindow import GlobalBlur
 
+from modules import _sizing,_pysideMessagebox,_database
+from static.css import _style
+
+
+
 
 
 class mainPage(QtWidgets.QMainWindow):
     def __init__(self):
         super(mainPage,self).__init__()
         self.setWindowTitle("Swedish Pocketknife V1.0")
-        self.setWindowIcon(QtGui.QIcon('static/icon.ico'))
+        self.setWindowIcon(QtGui.QIcon('static/images/icon.ico'))
         # self.setStyleSheet("background-color:#333;")
    
-        GlobalBlur(self.winId(),Dark=True,QWidget=self)
+        # GlobalBlur(self.winId(),Dark=True,QWidget=self)
         # self.setWindowFlag(QtCore.Qt.FramelessWindowHint) # No title bar
-        self.setAttribute(QtCore.Qt.WA_TranslucentBackground) # Transparent Background
-        self.setWindowOpacity(0.8)
+        # self.setAttribute(QtCore.Qt.WA_TranslucentBackground) # Transparent Background
+        # self.setWindowOpacity(0.8)
 
 
         toolbar = QToolBar("My main toolbar")
-        toolbar.setStyleSheet(style.toolbarStyle)
+        toolbar.setStyleSheet(_style.toolbarStyle)
         toolbar.setMovable(False)
         self.addToolBar(toolbar)
 
@@ -93,14 +98,7 @@ class mainPage(QtWidgets.QMainWindow):
 
         self.entry = QLineEdit(self)
         self.entry.setPlaceholderText("Metin girin...")
-        self.entry.move(3,100)
-
-
-        QtCore.Slot()
-        def yazdir():
-            pass
-
-            
+        self.entry.move(3,100)            
 
         def createButton(name, text, event, resizex, resizey, movex, movey):
             button = QPushButton(text, self)
@@ -108,8 +106,6 @@ class mainPage(QtWidgets.QMainWindow):
             button.move(movex, movey)
             button.resize(resizex, resizey)
             return button
-
-        createButton("namee", "text", self.youtubeUi, 50, 50, 300, 300)
 
 
         # def createLabel(text):
@@ -131,15 +127,9 @@ class mainPage(QtWidgets.QMainWindow):
         #     main_frame.setFrameShadow(QFrame.Sunken)  # Çerçeve gölgesi
         #     main_frame.setStyleSheet(f"background-color: {bgColor};")
 
-        # createFrame(2,130,150,sizing.ydef-250,"grey")
+        # createFrame(2,130,150,_sizing.ydef-250,"grey")
         # createFrame(2,765,1558,100,"grey")
 
-    def youtubeUi(self):
-        import ui_youtube  # ui_youtube modülünü içe aktarın
-        youtube_window = mainPage()  # Bir QMainWindow veya QWidget oluşturun
-        ui = ui_youtube.Ui_Form()  # ui_youtube modülünden Ui_Form sınıfını oluşturun
-        ui.setupUi(youtube_window)  # YouTube penceresini oluşturun
-        youtube_window.show()
         
         
 
@@ -158,7 +148,7 @@ class mainPage(QtWidgets.QMainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     widget = mainPage()
-    widget.resize(sizing.xdef, sizing.ydef)
-    widget.move(sizing.xdefmov,sizing.ydefmove)
+    widget.resize(_sizing.xdef, _sizing.ydef)
+    widget.move(_sizing.xdefmov,_sizing.ydefmove)
     widget.show()
     sys.exit(app.exec())
