@@ -21,18 +21,30 @@ class mainPage(QtWidgets.QMainWindow):
         super(mainPage,self).__init__()
         self.setWindowTitle("Swedish Pocketknife V1.0")
         self.setWindowIcon(QtGui.QIcon('static/images/icon.ico'))
+
+        
         # self.setStyleSheet("background-color:#333;")
    
         # GlobalBlur(self.winId(),Dark=True,QWidget=self)
-        # self.setWindowFlag(QtCore.Qt.FramelessWindowHint) # No title bar
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint) # No title bar
         # self.setAttribute(QtCore.Qt.WA_TranslucentBackground) # Transparent Background
         # self.setWindowOpacity(0.8)
 
 
-        toolbar = QToolBar("My main toolbar")
-        toolbar.setStyleSheet(_style.toolbarStyle)
-        toolbar.setMovable(False)
-        self.addToolBar(toolbar)
+        self.menu_bar = QMenuBar(self)
+        self.setMenuBar(self.menu_bar)
+
+        file_menu = self.menu_bar.addMenu("Dosya")
+        exit_action = QAction("Çıkış", self)
+        exit_action.triggered.connect(self.close)
+        file_menu.addAction(exit_action)
+        
+        
+
+        # toolbar = QToolBar("My main toolbar")
+        # toolbar.setStyleSheet(_style.toolbarStyle)
+        # toolbar.setMovable(False)
+        # self.addToolBar(toolbar)
 
         """
         button_action = QAction("Account", self)
@@ -44,28 +56,28 @@ class mainPage(QtWidgets.QMainWindow):
 
         """
         
-        def createToolButton(name,status,event):
-            toolbarButton = QAction(name,self)
-            toolbarButton.setStatusTip(status)
-            toolbarButton.triggered.connect(event)
-            toolbarButton.setCheckable(True)
-            toolbar.addAction(toolbarButton)
+        # def createToolButton(name,status,event):
+        #     toolbarButton = QAction(name,self)
+        #     toolbarButton.setStatusTip(status)
+        #     toolbarButton.triggered.connect(event)
+        #     toolbarButton.setCheckable(True)
+        #     toolbar.addAction(toolbarButton)
 
-        createToolButton(" File ","This is your button",self.showInfo)
-        createToolButton("Account","This is your button",self.showInfo)
-        createToolButton("Math","This is your button",self.showInfo)
+        # createToolButton(" File ","This is your button",self.showInfo)
+        # createToolButton("Account","This is your button",self.showInfo)
+        # createToolButton("Math","This is your button",self.showInfo)
 
-        def createToolDropdownMenu(menu_title, *items):
-                    dropdown_menu = QMenu(self)
-                    for item in items:
-                        dropdown_menu.addAction(item)
-                    dropdown_button = QAction(menu_title, self)
-                    dropdown_button.setMenu(dropdown_menu)
-                    toolbar.addAction(dropdown_button)
+        # def createToolDropdownMenu(menu_title, *items):
+        #             dropdown_menu = QMenu(self)
+        #             for item in items:
+        #                 dropdown_menu.addAction(item)
+        #             dropdown_button = QAction(menu_title, self)
+        #             dropdown_button.setMenu(dropdown_menu)
+        #             toolbar.addAction(dropdown_button)
 
-        createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "X (Twitter)","Reddit",)
+        # createToolDropdownMenu("Social Media", "Youtube", "İnstagram", "X (Twitter)","Reddit",)
 
-        createToolButton("İnfo","This is your button",self.myWeb)
+        # createToolButton("İnfo","This is your button",self.myWeb)
 
         """
 
