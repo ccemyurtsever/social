@@ -16,6 +16,7 @@ from static.css import _style
 
 
 
+
 class mainPage(QtWidgets.QMainWindow):
     def __init__(self):
         super(mainPage,self).__init__()
