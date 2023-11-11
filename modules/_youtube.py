@@ -56,5 +56,3 @@ def ytDownload(url,quality,fps):
                 download
         else:
             return
-
-
