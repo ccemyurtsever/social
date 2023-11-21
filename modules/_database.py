@@ -23,3 +23,20 @@ def create():
         password text NOT NULL
     )""")
     dbOut()
+    time.sleep(0.2)
+
+
+# def insert(name, lastname, username, password):
+#     dbConnect()
+#     comment = "INSERT INTO USERS (name, lastname, username, password) VALUES (?, ?, ?, ?)"
+#     cursor.execute(comment, (name, lastname, username, password))
+#     dbOut()
+
+def insert(name,lastname,username,password):
+    dbConnect()
+    add_command = """INSERT INTO USERS(name,lastname,username,password) VALUES {} """
+    add = (name,lastname,username,password)
+    cursor.execute(add_command.format(add))
+    dbOut()
+    time.sleep(0.1)
+insert("cem","yurtsever0","cy","1546")
