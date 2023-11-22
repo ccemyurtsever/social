@@ -25,13 +25,6 @@ def create():
     dbOut()
     time.sleep(0.2)
 
-
-# def insert(name, lastname, username, password):
-#     dbConnect()
-#     comment = "INSERT INTO USERS (name, lastname, username, password) VALUES (?, ?, ?, ?)"
-#     cursor.execute(comment, (name, lastname, username, password))
-#     dbOut()
-
 def insert(name,lastname,username,password):
     dbConnect()
     add_command = """INSERT INTO USERS(name,lastname,username,password) VALUES {} """
@@ -39,4 +32,19 @@ def insert(name,lastname,username,password):
     cursor.execute(add_command.format(add))
     dbOut()
     time.sleep(0.1)
-insert("cem","yurtsever0","cy","1546")
+
+def update_password(newPassword,username):
+    dbConnect()
+    upd_command = """UPDATE USERS SET password = '{}' WHERE username = '{}'"""
+    cursor.execute(upd_command.format(newPassword,username))
+    dbOut()
+    time.sleep(0.1)
+
+def delete_account(username):
+    dbConnect()
+    dlt_command = """DELETE FROM USERS WHERE username = '{}' """
+    cursor.execute(dlt_command.format(username))
+    dbOut()
+    time.sleep(0.1)
+
+    
