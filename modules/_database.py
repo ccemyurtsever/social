@@ -47,4 +47,12 @@ def delete_account(username):
     dbOut()
     time.sleep(0.1)
 
+def drop_database():
+    dbConnect()
+    drop_command = """DROP DATABASE '{}'"""
+    cursor.execute(drop_command.format("database.db"))
+    dbOut()
+
+
+
     
