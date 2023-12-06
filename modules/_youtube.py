@@ -1,11 +1,21 @@
 from pytube import YouTube
 
 def fastYoutube(link):
-    YouTube(f"{link}").streams.first().download()
+    try:
+        YouTube(f"{link}").streams.first().download()
+    except:
+        return
+    finally:
+        print("Error")
+
 
 def ytMp3Download(url):
-    YouTube(url).streams.filter(res="mp3").first().download()
-
+    try:
+        YouTube(url).streams.filter(res="mp3").first().download()
+    except:
+        return
+    finally:
+        print("Error")
 
 def ytDownload(url,quality,fps):
     with YouTube(url).streams.filter(res=quality).filter(fps=fps).first().download() as download:
