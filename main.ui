@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="main">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -31,7 +31,14 @@
      <number>0</number>
     </property>
     <item alignment="Qt::AlignTop">
-     <widget class="QFrame" name="header">
+     <widget class="QFrame" name="Header">
+      <property name="styleSheet">
+       <string notr="true">QPushButton:hover#exit
+{
+   background-color:#d16e6e;
+border-radius: 25px;
+}</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -78,18 +85,27 @@
           <property name="bottomMargin">
            <number>0</number>
           </property>
-          <item>
-           <widget class="QFrame" name="frame_4">
+          <item alignment="Qt::AlignTop">
+           <widget class="QFrame" name="Verison">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item alignment="Qt::AlignLeft">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>v1.0.0</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
           <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-           <widget class="QFrame" name="frame_3">
+           <widget class="QFrame" name="Header_mid">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -113,7 +129,7 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="Application_name">
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
@@ -164,8 +180,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>45</width>
-                 <height>15</height>
+                 <width>50</width>
+                 <height>17</height>
                 </size>
                </property>
               </widget>
@@ -181,8 +197,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>42</width>
-                 <height>15</height>
+                 <width>50</width>
+                 <height>17</height>
                 </size>
                </property>
               </widget>
@@ -198,8 +214,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>42</width>
-                 <height>15</height>
+                 <width>50</width>
+                 <height>17</height>
                 </size>
                </property>
               </widget>
@@ -215,8 +231,8 @@
                </property>
                <property name="iconSize">
                 <size>
-                 <width>42</width>
-                 <height>15</height>
+                 <width>50</width>
+                 <height>17</height>
                 </size>
                </property>
               </widget>
@@ -231,7 +247,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_5">
+     <widget class="QFrame" name="Body">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -261,7 +277,7 @@
         <number>0</number>
        </property>
        <item alignment="Qt::AlignLeft">
-        <widget class="QFrame" name="frame_6">
+        <widget class="QFrame" name="Side_navigation">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -330,7 +346,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="realBody">
+        <widget class="QFrame" name="Real_body">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -486,7 +502,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QPushButton" name="cy">
+        <widget class="QPushButton" name="cemyurtseverdev">
          <property name="text">
           <string>cemyurtsever.dev</string>
          </property>
