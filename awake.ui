@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>0</number>
@@ -31,6 +34,10 @@
    </property>
    <item>
     <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">background-color: #333;
+color:#fff;</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -77,8 +84,12 @@
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item alignment="Qt::AlignRight|Qt::AlignTop">
+         <item alignment="Qt::AlignRight">
           <widget class="QFrame" name="frame_7">
+           <property name="styleSheet">
+            <string notr="true">
+</string>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -103,6 +114,10 @@
             </property>
             <item>
              <widget class="QPushButton" name="pushButton_6">
+              <property name="styleSheet">
+               <string notr="true"> background-color: 	#fff;
+</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -112,14 +127,18 @@
               </property>
               <property name="iconSize">
                <size>
-                <width>27</width>
-                <height>15</height>
+                <width>40</width>
+                <height>18</height>
                </size>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_4">
+              <property name="styleSheet">
+               <string notr="true"> background-color: 	#fff;
+</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -129,14 +148,18 @@
               </property>
               <property name="iconSize">
                <size>
-                <width>30</width>
-                <height>15</height>
+                <width>40</width>
+                <height>18</height>
                </size>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_3">
+              <property name="styleSheet">
+               <string notr="true"> background-color: 	#fff;
+</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -146,14 +169,18 @@
               </property>
               <property name="iconSize">
                <size>
-                <width>30</width>
-                <height>15</height>
+                <width>40</width>
+                <height>18</height>
                </size>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_5">
+              <property name="styleSheet">
+               <string notr="true"> background-color: 	#fff;
+</string>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -163,8 +190,8 @@
               </property>
               <property name="iconSize">
                <size>
-                <width>30</width>
-                <height>15</height>
+                <width>40</width>
+                <height>18</height>
                </size>
               </property>
              </widget>
@@ -174,6 +201,9 @@
          </item>
          <item>
           <widget class="QFrame" name="frame_6">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -252,10 +282,18 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Türkçe:&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Bu uygulama yalnızca kişisel eğitim ve öğrenme amaçları için oluşturulmuştur. Kullanmaya devam etmeniz, bu uygulamayı yalnızca kendi öğrenme sürecinizde bilgi ve becerilerinizi geliştirmek amacıyla kullanacağınız anlamına gelir. Bu bağlamda başvurunun içeriği, kaynakları ve sonuçları tamamen sizin sorumluluğunuzda olacaktır.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Bu uygulamayı kullanarak elde ettiğiniz bilgi ve deneyimlerin doğruluğunu ve uygunluğunu değerlendirmeniz beklenmektedir. Uygulamanın kullanımından doğabilecek her türlü sonuçtan ve olası sonuçlardan tamamen siz sorumlusunuz.&lt;br /&gt;&lt;br /&gt;This application has been created exclusively for personal educational and learning purposes. Continuing to use it implies that you will use this application solely for the purpose of enhancing your knowledge and skills in your own learning process. In this context, the content, resources, and outcomes of the application will be entirely under your own responsibility.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;It is expected that you assess the accuracy and appropriateness of the information and experiences gained through using this application. You are fully responsible for any results that may arise from the use of the application and potential consequences.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Bu uygulamayı kullanarak elde ettiğiniz bilgi ve deneyimlerin doğruluğunu ve uygunluğunu değerlendirmeniz beklenmektedir. Uygulamanın kullanımından doğabilecek her türlü sonuçtan ve olası sonuçlardan tamamen siz sorumlusunuz.&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;English:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;&lt;br /&gt;This application has been created exclusively for personal educational and learning purposes. Continuing to use it implies that you will use this application solely for the purpose of enhancing your knowledge and skills in your own learning process. In this context, the content, resources, and outcomes of the application will be entirely under your own responsibility.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;It is expected that you assess the accuracy and appropriateness of the information and experiences gained through using this application. You are fully responsible for any results that may arise from the use of the application and potential consequences.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;Hintçe:&lt;br /&gt;&lt;br /&gt;यह एप्लिकेशन विशेष रूप से व्यक्तिगत शैक्षिक और सीखने के उद्देश्यों के लिए बनाया गया है। इसका उपयोग जारी रखने का अर्थ है कि आप इस एप्लिकेशन का उपयोग केवल अपनी सीखने की प्रक्रिया में अपने ज्ञान और कौशल को बढ़ाने के उद्देश्य से करेंगे। इस संदर्भ में, एप्लिकेशन की सामग्री, संसाधन और परिणाम पूरी तरह से आपकी अपनी जिम्मेदारी के अधीन होंगे।यह अपेक्षा की जाती है कि आप इस एप्लिकेशन के उपयोग से प्राप्त जानकारी और अनुभवों की सटीकता और उपयुक्तता का आकलन करें। आप एप्लिकेशन के उपयोग से उत्पन्न होने वाले किसी भी परिणाम और संभावित परिणामों के लिए पूरी तरह जिम्मेदार हैं।&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -341,7 +379,7 @@ p, li { white-space: pre-wrap; }
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item alignment="Qt::AlignHCenter">
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
           <widget class="QFrame" name="frame_5">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -350,8 +388,15 @@ p, li { white-space: pre-wrap; }
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QCheckBox" name="checkBox">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
                <string>I HAVE READ, UNDERSTAND AND ACCEPT.</string>
               </property>
@@ -386,6 +431,10 @@ p, li { white-space: pre-wrap; }
             </property>
             <item>
              <widget class="QPushButton" name="pushButton">
+              <property name="styleSheet">
+               <string notr="true"> background-color: 	#A996c7;
+</string>
+              </property>
               <property name="text">
                <string>NEXT</string>
               </property>
@@ -393,6 +442,10 @@ p, li { white-space: pre-wrap; }
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_2">
+              <property name="styleSheet">
+               <string notr="true"> background-color: 	#Cb1f49;
+</string>
+              </property>
               <property name="text">
                <string>EXİT</string>
               </property>
