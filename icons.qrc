@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="icons">
-    <file>icons/close_FILL0_wght400_GRAD0_opsz24.png</file>
-    <file>icons/fullscreen_exit_FILL0_wght400_GRAD0_opsz24.png</file>
-    <file>icons/help_FILL0_wght400_GRAD0_opsz24.png</file>
-    <file>icons/horizontal_rule_FILL0_wght400_GRAD0_opsz24.png</file>
-  </qresource>
-</RCC>
